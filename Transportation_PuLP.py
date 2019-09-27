@@ -73,7 +73,6 @@ for j in REGIONS:
 	demandList = [] #Create
 	for i in PLANTS:
 		demandList.append(Vars[i][j])
-	print(demandList)
 	prob += lpSum([Vars[i][j] for i in PLANTS]) >= demand[j], "Sum_of_Products_into_Region_%s"%j
                    
 
