@@ -31,8 +31,8 @@ prob = LpProblem("Grand_Prix_Transportation", LpMinimize)
 #Note2: Other problems may use standard variables
 
 #Routes = [(i,j) for i in PLANTS for j in REGIONS]
-Routes = []
-for i in PLANTS:
+Routes = [] #Create an empty list
+for i in PLANTS: #Two dimensional list
 	for j in REGIONS:
 		myTuple = (i, j)
 		Routes.append(myTuple)
@@ -62,6 +62,8 @@ for i in PLANTS:
 	for j in REGIONS:
 		supplyList.append(Vars[i][j])
 	prob += lpSum(supplyList) <= supply[i], "Sum_of_Products_out_of_Plant_%s"%i
+	print(type(lpSum(supplyList) <= supply[i]))
+	print(type(prob))
 
 
 #Lower "demand" bounds are added to "prob" for each demand node j (region)
@@ -70,10 +72,10 @@ for i in PLANTS:
 # for j in REGIONS:
 #     prob += lpSum([Vars[i][j] for i in PLANTS]) == demand[j], "Sum_of_Products_into_Region_%s"%j
 for j in REGIONS:
-	demandList = [] #Create
+	demandList = [] #Create a list for each region cotaining 3 plants
 	for i in PLANTS:
 		demandList.append(Vars[i][j])
-	prob += lpSum([Vars[i][j] for i in PLANTS]) >= demand[j], "Sum_of_Products_into_Region_%s"%j
+	prob += lpSum(demandList) >= demand[j], "Sum_of_Products_into_Region_%s"%j
                    
 
 #The problem data is written to an .lp file, so it is human-readable :)
