@@ -16,13 +16,13 @@ shippingCost = { "Plant1" : {"Region1" : 131, "Region2" : 218, "Region3" : 266, 
 #Create a dictionary of constraints of supply
 supply = {"Plant1": 450,
           "Plant2": 600,
+
           "Plant3": 500}
 #Create a dictionary of constraints of demand
 demand = {"Region1": 450,
           "Region2": 200,
           "Region3": 300,
           "Region4": 300}
-
 #Create "prob" instance to contain problem data, and set objective as "minimize"
 prob = LpProblem("Grand_Prix_Transportation", LpMinimize)
 
