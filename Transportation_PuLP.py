@@ -62,8 +62,6 @@ for i in PLANTS:
 	for j in REGIONS:
 		supplyList.append(Vars[i][j])
 	prob += lpSum(supplyList) <= supply[i], "Sum_of_Products_out_of_Plant_%s"%i
-	print(type(lpSum(supplyList) <= supply[i]))
-	print(type(prob))
 
 
 #Lower "demand" bounds are added to "prob" for each demand node j (region)
