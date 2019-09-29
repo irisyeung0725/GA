@@ -1,50 +1,53 @@
 \* Grand_Prix_Transportation *\
 Minimize
-Sum_of_Shipping_Costs: 131 Route_Plant1_Region1 + 218 Route_Plant1_Region2
- + 266 Route_Plant1_Region3 + 120 Route_Plant1_Region4
- + 250 Route_Plant2_Region1 + 116 Route_Plant2_Region2
- + 263 Route_Plant2_Region3 + 278 Route_Plant2_Region4
- + 178 Route_Plant3_Region1 + 132 Route_Plant3_Region2
- + 122 Route_Plant3_Region3 + 188 Route_Plant3_Region4
+Sum_of_Shipping_Costs: 131 vars(Plant1)(Region1) + 218 vars(Plant1)(Region2)
+ + 266 vars(Plant1)(Region3) + 120 vars(Plant1)(Region4)
+ + 250 vars(Plant2)(Region1) + 116 vars(Plant2)(Region2)
+ + 263 vars(Plant2)(Region3) + 278 vars(Plant2)(Region4)
+ + 178 vars(Plant3)(Region1) + 132 vars(Plant3)(Region2)
+ + 122 vars(Plant3)(Region3) + 188 vars(Plant3)(Region4)
 Subject To
-Sum_of_Products_into_Region_Region1: Route_Plant1_Region1
- + Route_Plant2_Region1 + Route_Plant3_Region1 >= 450
-Sum_of_Products_into_Region_Region2: Route_Plant1_Region2
- + Route_Plant2_Region2 + Route_Plant3_Region2 >= 200
-Sum_of_Products_into_Region_Region3: Route_Plant1_Region3
- + Route_Plant2_Region3 + Route_Plant3_Region3 >= 300
-Sum_of_Products_into_Region_Region4: Route_Plant1_Region4
- + Route_Plant2_Region4 + Route_Plant3_Region4 >= 300
-Sum_of_Products_out_of_Plant_Plant1: Route_Plant1_Region1
- + Route_Plant1_Region2 + Route_Plant1_Region3 + Route_Plant1_Region4 <= 450
-Sum_of_Products_out_of_Plant_Plant2: Route_Plant2_Region1
- + Route_Plant2_Region2 + Route_Plant2_Region3 + Route_Plant2_Region4 <= 600
-Sum_of_Products_out_of_Plant_Plant3: Route_Plant3_Region1
- + Route_Plant3_Region2 + Route_Plant3_Region3 + Route_Plant3_Region4 <= 500
+Sum_of_Products_into_Region_Region1: vars(Plant1)(Region1)
+ + vars(Plant2)(Region1) + vars(Plant3)(Region1) >= 450
+Sum_of_Products_into_Region_Region2: vars(Plant1)(Region2)
+ + vars(Plant2)(Region2) + vars(Plant3)(Region2) >= 200
+Sum_of_Products_into_Region_Region3: vars(Plant1)(Region3)
+ + vars(Plant2)(Region3) + vars(Plant3)(Region3) >= 300
+Sum_of_Products_into_Region_Region4: vars(Plant1)(Region4)
+ + vars(Plant2)(Region4) + vars(Plant3)(Region4) >= 300
+Sum_of_Products_out_of_Plant_Plant1: vars(Plant1)(Region1)
+ + vars(Plant1)(Region2) + vars(Plant1)(Region3) + vars(Plant1)(Region4)
+ <= 450
+Sum_of_Products_out_of_Plant_Plant2: vars(Plant2)(Region1)
+ + vars(Plant2)(Region2) + vars(Plant2)(Region3) + vars(Plant2)(Region4)
+ <= 600
+Sum_of_Products_out_of_Plant_Plant3: vars(Plant3)(Region1)
+ + vars(Plant3)(Region2) + vars(Plant3)(Region3) + vars(Plant3)(Region4)
+ <= 500
 Bounds
-0 <= Route_Plant1_Region1
-0 <= Route_Plant1_Region2
-0 <= Route_Plant1_Region3
-0 <= Route_Plant1_Region4
-0 <= Route_Plant2_Region1
-0 <= Route_Plant2_Region2
-0 <= Route_Plant2_Region3
-0 <= Route_Plant2_Region4
-0 <= Route_Plant3_Region1
-0 <= Route_Plant3_Region2
-0 <= Route_Plant3_Region3
-0 <= Route_Plant3_Region4
+0 <= vars(Plant1)(Region1)
+0 <= vars(Plant1)(Region2)
+0 <= vars(Plant1)(Region3)
+0 <= vars(Plant1)(Region4)
+0 <= vars(Plant2)(Region1)
+0 <= vars(Plant2)(Region2)
+0 <= vars(Plant2)(Region3)
+0 <= vars(Plant2)(Region4)
+0 <= vars(Plant3)(Region1)
+0 <= vars(Plant3)(Region2)
+0 <= vars(Plant3)(Region3)
+0 <= vars(Plant3)(Region4)
 Generals
-Route_Plant1_Region1
-Route_Plant1_Region2
-Route_Plant1_Region3
-Route_Plant1_Region4
-Route_Plant2_Region1
-Route_Plant2_Region2
-Route_Plant2_Region3
-Route_Plant2_Region4
-Route_Plant3_Region1
-Route_Plant3_Region2
-Route_Plant3_Region3
-Route_Plant3_Region4
+vars(Plant1)(Region1)
+vars(Plant1)(Region2)
+vars(Plant1)(Region3)
+vars(Plant1)(Region4)
+vars(Plant2)(Region1)
+vars(Plant2)(Region2)
+vars(Plant2)(Region3)
+vars(Plant2)(Region4)
+vars(Plant3)(Region1)
+vars(Plant3)(Region2)
+vars(Plant3)(Region3)
+vars(Plant3)(Region4)
 End
