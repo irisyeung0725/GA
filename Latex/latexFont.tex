@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\begin{center}
+    \textbf{\textsf{\huge huge-sized bold sans-serif text}}
+\end{center}
+\textsf{normal-sized sans-serif text}
+\begin{itemize}
+    \item \textsf{bullet 1}
+    \item \textsf{bullet 2}
+\end{itemize}
+
+\begin{equation*}
+\begin{aligned}
+% & \underset{x}{
+& \textsf{minimize}
+& & f_0(x) \\
+& \textsf{subject to}
+& & f_i(x) \leq b_i, \; i = 1, \ldots, m
+\end{aligned}
+\end{equation*}
+\textsf{
+\begin{itemize}
+    \item $x = (x_1, \ldots, x_n)$: optimization variables
+    \item $f_0: \mathbf{R}^n \rightarrow \mathbf{R}:$ objective function
+    \item $f_i: \mathbf{R}^n \rightarrow \mathbf{R}, i = 1, \ldots m:$ constraint functions
+\end{itemize}}
+\textsf{\textbf{\normalsize optimal solution} $x$ has smallest value of $f_0$ among all vectors that satisfy the constraints} 
+\vspace{10mm}
+
+\textsf{there is more}
+\[ 
+  %begin equation
+\begin{aligned}
+\textsf{minimize} && &&
+\lVert Ax - b \rVert^2 _{2}
+%end equation
+\end{aligned}
+\]
+\end{document}
